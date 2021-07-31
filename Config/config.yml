@@ -1,0 +1,6 @@
+# The base paths to needed files
+
+files:
+  base_path: C:\OrangeShine\Data
+  modules_path: C:\OrangeShine\Modules
+  tests_path: C:\OrangeShine\Tests
