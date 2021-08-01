@@ -1,5 +1,8 @@
+import json
 import sys
 import yaml
+import pathlib
+import os  # File directory manipulations
 
 config_file_path = ('C:\OrangeShine\Config\config.yml')
 
@@ -32,9 +35,16 @@ if __name__ == '__main__':
     import Search_Users
 
     search_database = input('Search for organizations, tickets, users (input 1, 2, 3): ' )
+
     if search_database == '1':
+        file_name = r'organizations.json'
+        path_organizations = os.path.join(base_path, file_name)
+
+        with open (path_organizations) as file_object:
+            organizations = json.load (file_object)
+
         Search_Organizations.display_search_items_organizations_database()
-        Search_Organizations.receive_search_inputs_organizations_database()
+        Search_Organizations.receive_search_inputs_organizations_database(organizations)
 
     elif search_database == '2':
         Search_Tickets.display_search_items_tickets_database()
