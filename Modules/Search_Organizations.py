@@ -39,8 +39,6 @@ def search_organizations_database(organizations, search_item, search_value):
     '''
     This function searches the database and displays the results.
     '''
-
-
     count = 0
     for index in range(0, len(organizations)):
         dict_tuple = organizations[index].items()

@@ -47,8 +47,14 @@ if __name__ == '__main__':
         Search_Organizations.receive_search_inputs_organizations_database(organizations)
 
     elif search_database == '2':
+        file_name = r'tickets.json'
+        path_tickets = os.path.join(base_path, file_name)
+
+        with open (path_tickets) as file_object:
+            tickets = json.load (file_object)
+
         Search_Tickets.display_search_items_tickets_database()
-        Search_Tickets.receive_search_inputs_tickets_database()
+        Search_Tickets.receive_search_inputs_tickets_database(tickets)
 
     elif search_database == '3':
         Search_Users.display_search_items_users_database()
