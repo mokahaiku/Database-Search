@@ -100,6 +100,7 @@ def receive_boolean_value_inputs_users_database():
     return search_value
 
 
+# These functions are used by the Tests Module
 def search_for_string():
     '''
     This function is used by the Test_Search_Users.py to determine that this module can read string values correctly.

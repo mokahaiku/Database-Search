@@ -1,5 +1,4 @@
 import unittest
-import Search_Organizations
 
 class TestSearchOrganizations(unittest.TestCase):
     def test_for_string(self):
