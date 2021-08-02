@@ -98,45 +98,33 @@ def receive_boolean_value_inputs_tickets_database():
 
 
 # Functions used for the Tests Module
-def search_for_string():
+def search_for_string(tickets):
     '''
     This function is used by the Test_Search_Tickets.py to determine that this module can read string values correctly.
     '''
-    with open ('tickets.json') as file_object:
-        tickets = json.load (file_object)
-
     found_string = tickets[0]['type']
     return found_string
 
 
-def search_for_integer():
+def search_for_integer(tickets):
     '''
     This function is used by the Test_Search_Tickets.py to determine that this module can read integer values correctly.
     '''
-    with open ('tickets.json') as file_object:
-        tickets = json.load (file_object)
-
     found_integer = tickets[4]['submitter_id']
     return found_integer
 
 
-def search_for_boolean():
+def search_for_boolean(tickets):
     '''
     This function is used by the Test_Search_Tickets.py to determine that this module can read boolean values correctly.
     '''
-    with open ('tickets.json') as file_object:
-        tickets = json.load (file_object)
-
     found_boolean = tickets[7]['has_incidents']
     return found_boolean
 
 
-def search_for_list():
+def search_for_list(tickets):
     '''
     This function is used by the Test_Search_Tickets.py to determine that this module can read list values correctly.
     '''
-    with open ('tickets.json') as file_object:
-        tickets = json.load (file_object)
-
     found_list = tickets[10]['tags']
     return found_list

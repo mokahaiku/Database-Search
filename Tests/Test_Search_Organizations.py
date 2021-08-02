@@ -25,19 +25,19 @@ sys.path.append(modules_path) # Finds modules in the indicated directory.
 
 class TestSearchOrganizations(unittest.TestCase):
     def test_for_string(self):
-        result = Search_Organizations.organizations_search_for_string(organizations)
+        result = Search_Organizations.search_for_string(organizations)
         self.assertEqual(result, 'Enthaze')
 
     def test_for_integer(self):
-        result = Search_Organizations.organizations_search_for_integer(organizations)
+        result = Search_Organizations.search_for_integer(organizations)
         self.assertEqual(result, 105)
 
     def test_for_boolean(self):
-        result = Search_Organizations.organizations_search_for_boolean(organizations)
+        result = Search_Organizations.search_for_boolean(organizations)
         self.assertEqual(result, False)
 
     def test_for_list(self):
-        result = Search_Organizations.organizations_search_for_list(organizations)
+        result = Search_Organizations.search_for_list(organizations)
         self.assertEqual(result, ['Sheppard', 'Nunez', 'Bartlett', 'Giles'])
 
 if __name__ == '__main__':
