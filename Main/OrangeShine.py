@@ -34,34 +34,34 @@ if __name__ == '__main__':
     import Search_Tickets
     import Search_Users
 
+    # Open organizations database
+    file_name = r'organizations.json'
+    path_organizations = os.path.join(base_path, file_name)
+    with open (path_organizations) as file_object:
+        organizations = json.load (file_object)
+
+    # Open tickets database
+    file_name = r'tickets.json'
+    path_tickets = os.path.join(base_path, file_name)
+    with open (path_tickets) as file_object:
+        tickets = json.load (file_object)
+
+    # Open users database
+    file_name = r'users.json'
+    path_users = os.path.join(base_path, file_name)
+    with open (path_users) as file_object:
+        users = json.load (file_object)
+
     search_database = input('Search for organizations, tickets, users (input 1, 2, 3): ' )
 
     if search_database == '1':
-        file_name = r'organizations.json'
-        path_organizations = os.path.join(base_path, file_name)
-
-        with open (path_organizations) as file_object:
-            organizations = json.load (file_object)
-
         Search_Organizations.display_search_items_organizations_database()
         Search_Organizations.receive_search_inputs_organizations_database(organizations)
 
     elif search_database == '2':
-        file_name = r'tickets.json'
-        path_tickets = os.path.join(base_path, file_name)
-
-        with open (path_tickets) as file_object:
-            tickets = json.load (file_object)
-
         Search_Tickets.display_search_items_tickets_database()
         Search_Tickets.receive_search_inputs_tickets_database(tickets)
 
     elif search_database == '3':
-        file_name = r'users.json'
-        path_users = os.path.join(base_path, file_name)
-
-        with open (path_users) as file_object:
-            users = json.load (file_object)
-
         Search_Users.display_search_items_users_database()
         Search_Users.receive_search_inputs_users_database(users)
