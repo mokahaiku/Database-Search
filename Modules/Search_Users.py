@@ -101,45 +101,33 @@ def receive_boolean_value_inputs_users_database():
 
 
 # These functions are used by the Tests Module
-def search_for_string():
+def search_for_string(users):
     '''
     This function is used by the Test_Search_Users.py to determine that this module can read string values correctly.
     '''
-    with open ('users.json') as file_object:
-        users = json.load (file_object)
-
     found_string = users[0]['name']
     return found_string
 
 
-def search_for_integer():
+def search_for_integer(users):
     '''
     This function is used by the Test_Search_Users.py to determine that this module can read integer values correctly.
     '''
-    with open ('users.json') as file_object:
-        users = json.load (file_object)
-
     found_integer = users[4]['organization_id']
     return found_integer
 
 
-def search_for_boolean():
+def search_for_boolean(users):
     '''
     This function is used by the Test_Search_Users.py to determine that this module can read boolean values correctly.
     '''
-    with open ('users.json') as file_object:
-        users = json.load (file_object)
-
     found_boolean = users[7]['active']
     return found_boolean
 
 
-def search_for_list():
+def search_for_list(users):
     '''
     This function is used by the Test_Search_Users.py to determine that this module can read list values correctly.
     '''
-    with open ('users.json') as file_object:
-        users = json.load (file_object)
-
     found_list = users[10]['tags']
     return found_list
