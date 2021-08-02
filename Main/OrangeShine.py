@@ -4,6 +4,7 @@ import yaml
 import pathlib
 import os  # File directory manipulations
 
+
 config_file_path = ('C:\OrangeShine\Config\config.yml')
 
 def yaml_loader(config_file_path):
@@ -15,17 +16,10 @@ def yaml_loader(config_file_path):
 data = yaml_loader (config_file_path)
 
 files = data.get('files')
-
 base_path = (files['base_path'])
-
 modules_path = (files['modules_path'])
 
-tests_path = (files['tests_path'])
-
 sys.path.append(modules_path) # Finds modules in the indicated directory.
-
-sys.path.append(tests_path) # Finds tests in the indicated directory.
-
 
 
 if __name__ == '__main__':

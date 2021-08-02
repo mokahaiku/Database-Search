@@ -87,45 +87,33 @@ def receive_boolean_value_inputs_organizations_database():
 
 
 # The following functions are used in the Tests Module
-def search_for_string():
+def organizations_search_for_string(organizations):
     '''
     This function is used by the Test_Search_Organization.py to determine that this module can read string values correctly.
     '''
-    with open ('organizations.json') as file_object:
-        organizations = json.load (file_object)
-
     found_string = organizations[0]['name']
     return found_string
 
 
-def search_for_integer():
+def organizations_search_for_integer(organizations):
     '''
     This function is used by the Test_Search_Organization.py to determine that this module can read integer values correctly.
     '''
-    with open ('organizations.json') as file_object:
-        organizations = json.load (file_object)
-
     found_integer = organizations[4]['_id']
     return found_integer
 
 
-def search_for_boolean():
+def organizations_search_for_boolean(organizations):
     '''
     This function is used by the Test_Search_Organization.py to determine that this module can read boolean values correctly.
     '''
-    with open ('organizations.json') as file_object:
-        organizations = json.load (file_object)
-
     found_boolean = organizations[7]['shared_tickets']
     return found_boolean
 
 
-def search_for_list():
+def organizations_search_for_list(organizations):
     '''
     This function is used by the Test_Search_Organization.py to determine that this module can read list values correctly.
     '''
-    with open ('organizations.json') as file_object:
-        organizations = json.load (file_object)
-
     found_list = organizations[10]['tags']
     return found_list
