@@ -22,6 +22,7 @@ modules_path = (files['modules_path'])
 
 sys.path.append(modules_path) # Finds modules in the indicated directory.
 
+
 class TestSearchTickets(unittest.TestCase):
     def test_for_string(self):
         result = Search_Tickets.search_for_string(tickets)
@@ -38,6 +39,7 @@ class TestSearchTickets(unittest.TestCase):
     def test_for_list(self):
         result = Search_Tickets.search_for_list(tickets)
         self.assertEqual(result, ['Michigan', 'Florida', 'Georgia', 'Tennessee'])
+
 
 if __name__ == '__main__':
     import Search_Tickets

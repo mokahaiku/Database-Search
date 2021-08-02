@@ -86,7 +86,7 @@ def receive_boolean_value_inputs_organizations_database():
     return search_value
 
 
-# The following functions are used in the Tests Module
+# These functions are used in the Tests Module
 def search_for_string(organizations):
     '''
     This function is used by the Test_Search_Organization.py to determine that this module can read string values correctly.

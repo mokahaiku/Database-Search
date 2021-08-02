@@ -97,7 +97,7 @@ def receive_boolean_value_inputs_tickets_database():
 
 
 
-# Functions used for the Tests Module
+# These Functions are used for the Tests Module
 def search_for_string(tickets):
     '''
     This function is used by the Test_Search_Tickets.py to determine that this module can read string values correctly.

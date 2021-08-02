@@ -40,6 +40,7 @@ class TestSearchOrganizations(unittest.TestCase):
         result = Search_Organizations.search_for_list(organizations)
         self.assertEqual(result, ['Sheppard', 'Nunez', 'Bartlett', 'Giles'])
 
+
 if __name__ == '__main__':
     import Search_Organizations
 

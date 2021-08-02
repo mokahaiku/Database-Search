@@ -28,19 +28,17 @@ if __name__ == '__main__':
     import Search_Tickets
     import Search_Users
 
-    # Open organizations database
+
     file_name = r'organizations.json'
     path_organizations = os.path.join(base_path, file_name)
     with open (path_organizations) as file_object:
         organizations = json.load (file_object)
 
-    # Open tickets database
     file_name = r'tickets.json'
     path_tickets = os.path.join(base_path, file_name)
     with open (path_tickets) as file_object:
         tickets = json.load (file_object)
 
-    # Open users database
     file_name = r'users.json'
     path_users = os.path.join(base_path, file_name)
     with open (path_users) as file_object:
