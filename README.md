@@ -19,7 +19,7 @@ The tests determine whether the program can read all data types contained within
 2.	integer
 3.	boolean
 4.	list
-All tests produce satisfactory results.
+<p>All tests produce satisfactory results.
 
 ## Technologies
 1. Python’s json library
