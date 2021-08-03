@@ -1,4 +1,4 @@
-def display_search_items_tickets_database():
+def display_search_items():
     '''
     This function displays the search items available in the tickets.json file.
     '''
@@ -21,9 +21,9 @@ def display_search_items_tickets_database():
     print("via")
 
 
-def receive_search_inputs_tickets_database(tickets):
+def receive_search_inputs(tickets):
     '''
-    This function receives input from the user, modifies the input as needed by calling on other functions, and finally calls on the function search_tickets_database() which conducts the search and displays the results.
+    This function receives input from the user, modifies the input as needed by calling on other functions, and finally calls on the function search_tickets() which conducts the search and displays the results.
     '''
     search_item = input('\nPlease choose search item: ')
 
@@ -31,21 +31,21 @@ def receive_search_inputs_tickets_database(tickets):
     search_item == 'submitter_id' or
     search_item == 'assignee_id' or
     search_item == 'organization_id'):
-        search_value = receive_integer_value_inputs_tickets_database()
+        search_value = receive_integer_inputs()
 
     elif search_item == 'tags':
-        search_value = receive_list_value_inputs_tickets_database()
+        search_value = receive_list_inputs()
 
     elif search_item == 'has_incidents':
-        search_value = receive_boolean_value_inputs_tickets_database()
+        search_value = receive_boolean_inputs()
 
     else:
         search_value = input('\nPlease choose search value: ')
 
-    search_tickets_database(tickets, search_item, search_value)
+    search_tickets(tickets, search_item, search_value)
 
 
-def search_tickets_database(tickets, search_item, search_value):
+def search_tickets(tickets, search_item, search_value):
     '''
     This function searches the database and displays the results.
     '''
@@ -62,7 +62,7 @@ def search_tickets_database(tickets, search_item, search_value):
         print('No Results Found')
 
 
-def receive_integer_value_inputs_tickets_database():
+def receive_integer_inputs():
     '''
     This function converts string input from user into integer.
     '''
@@ -71,33 +71,32 @@ def receive_integer_value_inputs_tickets_database():
     return search_value
 
 
-def receive_list_value_inputs_tickets_database():
+def receive_list_inputs():
     '''
     This function converts string input from the user into a list.
     '''
-    list_of_values = []
+    values = []
     for i in range(4):
         search_value = input('Enter only one element at a time in order: ')
-        list_of_values.append(search_value)
-    search_value = list_of_values
+        values.append(search_value)
+    search_value = values
     return search_value
 
 
-def receive_boolean_value_inputs_tickets_database():
+def receive_boolean_inputs():
     '''
     This function converts string input from the user into a boolean.
     '''
-    boolean_search_value = input('\nPlease enter true or false: ')
-    if boolean_search_value == 'true':
+    boolean_value = input('\nPlease enter true or false: ')
+    if boolean_value == 'true':
         search_value = True
-    elif boolean_search_value == 'false':
+    elif boolean_value == 'false':
         search_value = False
 
     return search_value
 
 
-
-# These Functions are used for the Tests Module
+# These Functions are used for the Tests Module.
 def search_for_string(tickets):
     '''
     This function is used by the Test_Search_Tickets.py to determine that this module can read string values correctly.

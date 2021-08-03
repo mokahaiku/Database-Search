@@ -14,12 +14,11 @@ def yaml_loader(config_file_path):
 
     return data
 
-data = yaml_loader (config_file_path)
 
+data = yaml_loader (config_file_path)
 files = data.get('files')
 base_path = (files['base_path'])
 modules_path = (files['modules_path'])
-
 sys.path.append(modules_path) # Finds modules in the indicated directory.
 
 

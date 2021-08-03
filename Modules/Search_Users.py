@@ -1,4 +1,4 @@
-def display_search_items_users_database():
+def display_search_items():
     '''
     This function displays the search items available in the users.json file.
     '''
@@ -24,32 +24,32 @@ def display_search_items_users_database():
     print("role")
 
 
-def receive_search_inputs_users_database(users):
+def receive_search_inputs(users):
     '''
-    This function receives input from the user, modifies the input as needed by calling on other functions, and finally calls on the function search_users_database() which conducts the search and displays the results.
+    This function receives input from the user, modifies the input as needed by calling on other functions, and finally calls on the function search_users() which conducts the search and displays the results.
     '''
     search_item = input('\nPlease choose search item: ')
 
     if search_item == '_id' or search_item == 'organization_id':
-        search_value = receive_integer_value_inputs_users_database()
+        search_value = receive_integer_inputs()
 
     elif search_item == 'tags':
-        search_value = receive_list_value_inputs_users_database()
+        search_value = receive_list_inputs()
 
     elif (
     search_item == 'active' or
     search_item == 'verified' or
     search_item == 'shared' or
     search_item == 'suspended'):
-        search_value = receive_boolean_value_inputs_users_database()
+        search_value = receive_boolean_inputs()
 
     else:
         search_value = input('\nPlease choose search value: ')
 
-    search_users_database(users, search_item, search_value)
+    search_users(users, search_item, search_value)
 
 
-def search_users_database(users, search_item, search_value):
+def search_users(users, search_item, search_value):
     '''
     This function searches the database and displays the results.
     '''
@@ -66,7 +66,7 @@ def search_users_database(users, search_item, search_value):
         print('No Results Found')
 
 
-def receive_integer_value_inputs_users_database():
+def receive_integer_inputs():
     '''
     This function converts string input from user into integer.
     '''
@@ -75,32 +75,32 @@ def receive_integer_value_inputs_users_database():
     return search_value
 
 
-def receive_list_value_inputs_users_database():
+def receive_list_inputs():
     '''
     This function converts string input from user into list.
     '''
-    list_of_values = []
+    values = []
     for i in range(4):
         search_value = input('Enter only one element at a time in order: ')
-        list_of_values.append(search_value)
-    search_value = list_of_values
+        values.append(search_value)
+    search_value = values
     return search_value
 
 
-def receive_boolean_value_inputs_users_database():
+def receive_boolean_inputs():
     '''
     This function converts string input from user into boolean.
     '''
-    boolean_search_value = input('\nPlease enter true or false: ')
-    if boolean_search_value == 'true':
+    boolean_value = input('\nPlease enter true or false: ')
+    if boolean_value == 'true':
         search_value = True
-    elif boolean_search_value == 'false':
+    elif boolean_value == 'false':
         search_value = False
 
     return search_value
 
 
-# These functions are used by the Tests Module
+# These functions are used in the Tests Module.
 def search_for_string(users):
     '''
     This function is used by the Test_Search_Users.py to determine that this module can read string values correctly.
