@@ -43,7 +43,7 @@ if __name__ == '__main__':
         users = json.load (file_object)
 
 
-    search_database = input('Search for organizations, tickets, users (input 1, 2, 3): ' )
+    search_database = input('Input 1 to search for organizations, 2 to search for tickets, 3 to search for users: ' )
 
     if search_database == '1':
         Search_Organizations.display_search_items()
